@@ -33,13 +33,13 @@ jobs:
   
       - run: sudo apt-get -y install google-chrome-stable
       - run: whereis google-chrome
-      - run: wget https://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_linux64.zip
+      - run: wget https://chromedriver.storage.googleapis.com/101.0.4951.15/chromedriver_linux64.zip
       - run: unzip chromedriver_linux64.zip
       - run: sudo mv chromedriver /usr/bin/chromedriver
       - run: sudo chown root:root /usr/bin/chromedriver
       - run: sudo chmod +x /usr/bin/chromedriver
       - run: sudo apt-get install xvfb
-#       - run: chrome --version
+      - run: chrome --version
       - uses: actions/checkout@v3
 #       #checkout web-mpc
 #       - run: git submodule init 
@@ -65,8 +65,8 @@ jobs:
       #not implemented
       
       #run tests
-      - run: npm install --save selenium-webdriver chromedriver
-      - run: ls
+#       - run: npm install --save selenium-webdriver chromedriver
+#       - run: ls
       - run: Xvfb :1 -screen 0 1024x768x24 & export DISPLAY=:1
       - run: node test/selenium/small_test.js
       - run: npm run test

@@ -27,7 +27,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #       steps:
       #install chrome
-      - run: sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+#       - run: sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
       - run: sudo echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
       - run: sudo apt-get -y update
   

@@ -28,6 +28,7 @@ jobs:
 #       steps:
       #install chrome
       - run: sudo apt-get install google-chrome-stable
+      - run: whereis google-chrome
 #       - run: chrome --version
       - uses: actions/checkout@v3
 #       #checkout web-mpc

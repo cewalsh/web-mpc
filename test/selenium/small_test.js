@@ -6,10 +6,13 @@ async function example(){
        var searchString = "Automation testing with Selenium";
  
        //To wait for browser to build and launch properly
-       driver = await new Builder()
-        .forBrowser('chrome')
-        .setChromeOptions(new chrome.Options().addArguments(['--headless','--no-sandbox', '--disable-dev-shm-usage']))
-        .build();
+       WebDriverManager.chromedriver().setup();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("disable-gpu");
+//          chromeOptions.addArguments("window-size=1400,2100"); // Linux should be activate
+            driver = new ChromeDriver(chromeOptions);
  
         //To fetch http://google.com from the browser with our code.
         await driver.get("http://google.com");

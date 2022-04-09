@@ -19,13 +19,14 @@ jobs:
   run_tests:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: circleci/mongo:latest
+#     container: circleci/mongo:latest
+#     container: cimg/node:current-browsers
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
+#       - uses: browser-actions/setup-chrome@latest
+#       - run: chrome --version
       - uses: actions/checkout@v3
 #       #checkout web-mpc
 #       - run: git submodule init 

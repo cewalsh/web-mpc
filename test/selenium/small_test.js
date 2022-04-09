@@ -1,18 +1,30 @@
-const {By,Key,Builder} = require("selenium-webdriver");
+// const {By,Key,Builder} = require("selenium-webdriver");
 require("chromedriver");
  
 async function example(){
  
        var searchString = "Automation testing with Selenium";
  
-       //To wait for browser to build and launch properly
-       WebDriverManager.chromedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--no-sandbox");
-            chromeOptions.addArguments("--headless");
-            chromeOptions.addArguments("disable-gpu");
-//          chromeOptions.addArguments("window-size=1400,2100"); // Linux should be activate
-            driver = new ChromeDriver(chromeOptions);
+      var webdriver = require("selenium-webdriver");
+      var chrome = require("selenium-webdriver/chrome");
+
+/** 
+ * Set chrome command line options/switches
+*/      
+      var chromeOptions = new chrome.Options();
+      chromeOptions.addArguments("--no-sandbox");
+      chromeOptions.addArguments("test-type");
+      chromeOptions.addArguments("start-maximized");
+      chromeOptions.addArguments("--js-flags=--expose-gc");
+      chromeOptions.addArguments("--enable-precise-memory-info");
+      chromeOptions.addArguments("--disable-popup-blocking");
+      chromeOptions.addArguments("--disable-default-apps");
+      chromeOptions.addArguments("--disable-infobars");
+
+driver = new webdriver.Builder()
+             .forBrowser("chrome")
+             .setChromeOptions(chromeOptions)
+             .build();
  
         //To fetch http://google.com from the browser with our code.
         await driver.get("http://google.com");

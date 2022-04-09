@@ -6,7 +6,10 @@ async function example(){
        var searchString = "Automation testing with Selenium";
  
        //To wait for browser to build and launch properly
-       let driver = await new Builder().forBrowser("chrome").build();
+       driver = await new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(new chrome.Options().addArguments(['--headless','--no-sandbox', '--disable-dev-shm-usage']))
+        .build();
  
         //To fetch http://google.com from the browser with our code.
         await driver.get("http://google.com");

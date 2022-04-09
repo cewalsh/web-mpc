@@ -56,7 +56,8 @@ jobs:
       
       #run tests
       - run: npm install --save selenium-webdriver chromedriver
-      - run: node small_test.js
+      - run: ls
+      - run: node test/selenium/small_test.js
       - run: npm run test
       
       #done

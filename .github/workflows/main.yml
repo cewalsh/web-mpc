@@ -33,7 +33,7 @@ jobs:
   
       - run: sudo apt-get -y install google-chrome-stable
       - run: whereis google-chrome
-      - run: wget https://chromedriver.storage.googleapis.com/101.0.4951.15/chromedriver_linux64.zip
+      - run: wget https://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_linux64.zip
       - run: unzip chromedriver_linux64.zip
       - run: sudo mv chromedriver /usr/bin/chromedriver
       - run: sudo chown root:root /usr/bin/chromedriver

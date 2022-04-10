@@ -61,6 +61,9 @@ jobs:
         gcloud compute config-ssh
         gcloud compute ssh --zone "us-central1-a" "test"  --project "se-mmf"
         pwd
+        cd ..
+        ls
+        cd ubuntu
         ls
         git clone https://github.com/cewalsh/web-mpc.git
         ls

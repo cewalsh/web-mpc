@@ -60,9 +60,11 @@ jobs:
       run: |-
         gcloud compute config-ssh
         gcloud compute ssh --zone "us-central1-a" "test"  --project "se-mmf"
+        pwd
         ls
         git clone https://github.com/cewalsh/web-mpc.git
-        mkdir test
+        ls
+        
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
     - run: |-

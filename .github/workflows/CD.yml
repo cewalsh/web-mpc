@@ -58,7 +58,7 @@ jobs:
     
     - name: SSH
       run: |-
-        gcloud compute instances create test 
+        gcloud compute instances create test2
         --image-project=debian-cloud 
         --image-family=debian-10 
         --metadata=startup-script='#! /bin/bash

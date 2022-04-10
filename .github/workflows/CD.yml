@@ -59,8 +59,8 @@ jobs:
     - name: SSH
       run: |-
         gcloud compute instances create test2
-        --image-project=debian-cloud 
-        --image-family=debian-10 
+        --source-instance-template=instance-template-2
+        --zone=us-central1-a
         --metadata=startup-script='#! /bin/bash
         apt update
         apt -y install apache2

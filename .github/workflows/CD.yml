@@ -58,7 +58,7 @@ jobs:
     
     - name: Create Instance
       run: |-
-        gcloud compute instances create test2 --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script='#! /bin/bash
+        gcloud compute instances create ${{ env.GITHUB_SHA}} --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script='#! /bin/bash
         echo Hello
         cd /home
         pwd
@@ -73,37 +73,3 @@ jobs:
         npm install
         cd ../
         npm start'
-#         gcloud compute config-ssh
-#         gcloud compute ssh --zone "us-central1-a" "test"  --project "se-mmf"
-#         pwd
-#         cd /home
-#         pwd
-#         ls
-#         git clone https://github.com/cewalsh/web-mpc.git
-#         pwd
-#         ls
-#         cd home
-#         pwd
-#         ls
-#         cd ubuntu
-#         ls
-#         git clone https://github.com/cewalsh/web-mpc.git
-#         ls
-        
-#     # Configure Docker to use the gcloud command-line tool as a credential
-#     # helper for authentication
-#     - run: |-
-#         gcloud --quiet auth configure-docker
-#     # Build the Docker image
-#     - name: Build
-#       run: |-
-#         docker build --tag "test" .
-#     # Push the Docker image to Google Container Registry
-#     - name: Publish
-#       run: |-
-#         docker push "test"
-#     - name: Deploy
-#       run: |-
-#         gcloud compute instances update-container "$GCE_INSTANCE" \
-#           --zone "$GCE_INSTANCE_ZONE" \
-#           --container-image "gcr.io/$PROJECT_ID/$GCE_INSTANCE-image:$GITHUB_SHA"

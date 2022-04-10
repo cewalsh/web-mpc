@@ -21,7 +21,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCE_PROJECT }}
-  GCE_INSTANCE: instance-1  # TODO: update to instance name
+  GCE_INSTANCE: test  # TODO: update to instance name
   GCE_INSTANCE_ZONE: us-central1-a   # TODO: update to instance zone
 
 jobs:
@@ -61,8 +61,8 @@ jobs:
         gcloud compute config-ssh
         gcloud compute ssh --zone "us-central1-a" "test"  --project "se-mmf"
         ls
+        git clone https://github.com/cewalsh/web-mpc.git
         mkdir test
-
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
     - run: |-

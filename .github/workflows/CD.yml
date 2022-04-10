@@ -55,6 +55,13 @@ jobs:
     # Setup gcloud CLI
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v0
+    
+    - name: SSH
+      run: |-
+        gcloud compute config-ssh
+        ssh instance-1.us-central1-a.se-mmf
+        ls
+        mkdir test
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication

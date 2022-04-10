@@ -58,10 +58,7 @@ jobs:
     
     - name: SSH
       run: |-
-        gcloud compute instances create test2
-        --source-instance-template=instance-template-2
-        --zone=us-central1-a
-        --metadata=startup-script='#! /bin/bash
+        gcloud compute instances create test2 --source-instance-template=instance-template-2 --zone=us-central1-a -metadata=startup-script='#! /bin/bash
         apt update
         apt -y install apache2
         cat <<EOF > /var/www/html/index.html

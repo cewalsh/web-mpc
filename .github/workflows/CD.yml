@@ -59,7 +59,7 @@ jobs:
     - name: SSH
       run: |-
         gcloud compute config-ssh
-        ssh instance-1.us-central1-a.se-mmf
+        ssh test.us-central1-a.se-mmf
         ls
         mkdir test
 

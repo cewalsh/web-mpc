@@ -63,6 +63,7 @@ jobs:
         pwd
         cd /home
         pwd
+        ls
         git clone https://github.com/cewalsh/web-mpc.git
         pwd
         ls

@@ -63,6 +63,8 @@ jobs:
         pwd
         cd ~
         ls
+        cd ..
+        ls
         cd ubuntu
         ls
         git clone https://github.com/cewalsh/web-mpc.git

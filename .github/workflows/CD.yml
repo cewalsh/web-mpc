@@ -58,6 +58,14 @@ jobs:
     
     - name: SSH
       run: |-
+        gcloud compute instances create test 
+        --image-project=debian-cloud 
+        --image-family=debian-10 
+        --metadata=startup-script='#! /bin/bash
+        apt update
+        apt -y install apache2
+        cat <<EOF > /var/www/html/index.html
+        <html><body><p>Linux startup script added directly.</p></body></html>'
         gcloud compute config-ssh
         gcloud compute ssh --zone "us-central1-a" "test"  --project "se-mmf"
         pwd

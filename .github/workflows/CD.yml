@@ -61,7 +61,7 @@ jobs:
         gcloud compute config-ssh
         gcloud compute ssh --zone "us-central1-a" "test"  --project "se-mmf"
         pwd
-        cd ..
+        cd ~
         ls
         cd ubuntu
         ls

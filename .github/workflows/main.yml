@@ -58,8 +58,8 @@ jobs:
       
       #install deps
       - run: npm install
-      - run: cd jiff
       - run: npm install
+        working-directory: ./jiff
       - run: cd ..
       #cache deps
       #not implemented

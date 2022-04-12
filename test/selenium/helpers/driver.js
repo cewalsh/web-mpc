@@ -9,7 +9,7 @@ module.exports = {
   create: function () {
     const execSync = require('child_process').execSync;
 
-     execSync("taskkill /T /F /IM chromedriver.exe", { encoding: 'utf-8' })
+     execSync("killall -KILL chromedriver", { encoding: 'utf-8' })
      
     
     var service = new seleniumChrome.ServiceBuilder(chromDriver.path).build();

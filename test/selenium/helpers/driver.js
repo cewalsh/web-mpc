@@ -7,6 +7,11 @@ var driver = null;
 
 module.exports = {
   create: function () {
+    const execSync = require('child_process').execSync;
+
+     execSync("taskkill /T /F /IM chromedriver.exe", { encoding: 'utf-8' })
+     
+    
     var service = new seleniumChrome.ServiceBuilder(chromDriver.path).build();
     seleniumChrome.setDefaultService(service);
 

@@ -62,7 +62,9 @@ jobs:
        gcloud compute instances create a$GITHUB_RUN_ID --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script=
        '#! /bin/bash
         
-        
+        cd /home
+        pwd
+        cd runner
     
         git clone https://github.com/BU-Spark/web-mpc
         cd web-mpc/

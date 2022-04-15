@@ -59,7 +59,7 @@ jobs:
     
     - name: Create Instance
       run: |-
-        gcloud compute instances create $GITHUB_SHA --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script='#! /bin/bash
+        gcloud compute instances create $GITHUB_RUN_ID --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script='#! /bin/bash
         echo Hello
         cd /home
         pwd

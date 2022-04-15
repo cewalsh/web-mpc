@@ -64,6 +64,8 @@ jobs:
         echo Hello
         cd /home
         pwd
+        sudo apt update
+        sudo apt -y install nodejs npm
         cd runner
         git clone https://github.com/BU-Spark/web-mpc
         cd web-mpc/

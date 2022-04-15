@@ -61,8 +61,8 @@ jobs:
       run: |-
        gcloud compute instances create a$GITHUB_RUN_ID --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script=
        '#! /bin/bash
-        
-       cd /home
+        echo Hello
+        cd /home
         pwd
         cd runner
         git clone https://github.com/BU-Spark/web-mpc
@@ -74,4 +74,5 @@ jobs:
         cd jiff/
         npm install
         cd ../
+        npm start
         '

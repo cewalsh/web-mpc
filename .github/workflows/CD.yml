@@ -74,5 +74,4 @@ jobs:
         npm install
         cd jiff/
         npm install
-        cd ../
         '

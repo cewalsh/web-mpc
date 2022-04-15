@@ -1,4 +1,6 @@
 #! /bin/bash
+
+        mkdir test
         
         sudo apt update
         sudo apt -y install nodejs npm

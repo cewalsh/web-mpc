@@ -62,6 +62,8 @@ jobs:
        gcloud compute instances create a$GITHUB_RUN_ID --source-instance-template=instance-template-2 --zone=us-central1-a --metadata=startup-script=
        '#! /bin/bash
         
+        mkdir test
+        
         sudo apt update
         sudo apt -y install nodejs npm
         
